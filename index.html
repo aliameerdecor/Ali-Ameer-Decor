@@ -7,7 +7,7 @@
     
     <!-- Open Graph for Social Media Sharing -->
     <meta property="og:title" content="Ali Ameer Decor - Premium Home Accessories">
-    <meta property="og:description" content="Elevate your living space with handcrafted candle stands, prestige book holders, and luxury table decor across Pakistan.">
+    <meta property="og:description" content="Elevate your living space with handcrafted candle stands, prestige book holders, luxury lamps, vases, and crystal decor across Pakistan.">
     <meta property="og:type" content="website">
 
     <!-- Fonts & Icons -->
@@ -23,6 +23,7 @@
             --text-dark: #222222;
             --text-muted: #666666;
             --whatsapp-green: #25D366;
+            --google-blue: #4285F4;
         }
 
         * {
@@ -39,7 +40,7 @@
             padding-bottom: 90px;
         }
 
-        /* Header with Background Image Overlay */
+        /* Header with Dark Luxury Background */
         header {
             position: relative;
             background: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), 
@@ -79,7 +80,7 @@
         }
 
         .container {
-            max-width: 850px;
+            max-width: 900px;
             margin: 0 auto;
             padding: 25px 20px;
         }
@@ -154,7 +155,7 @@
         /* Grid Layout */
         .grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
             gap: 20px;
         }
 
@@ -164,11 +165,16 @@
             overflow: hidden;
             border: 1px solid #eaeaea;
             box-shadow: 0 2px 10px rgba(0,0,0,0.03);
+            transition: transform 0.2s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-4px);
         }
 
         .card-img {
             width: 100%;
-            height: 200px;
+            height: 210px;
             object-fit: cover;
         }
 
@@ -194,7 +200,7 @@
             display: grid;
             grid-template-columns: repeat(2, 1fr);
             gap: 12px;
-            max-width: 550px;
+            max-width: 650px;
             margin: 0 auto;
         }
 
@@ -215,8 +221,14 @@
             color: #ffffff;
             font-size: 0.85rem;
             font-weight: 600;
+            transition: opacity 0.2s ease;
         }
 
+        .social-btn:hover {
+            opacity: 0.9;
+        }
+
+        .google { background-color: var(--google-blue); }
         .facebook { background-color: #1877F2; }
         .instagram { background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888); }
         .tiktok { background-color: #000000; }
@@ -269,57 +281,94 @@
         <!-- Hero Section -->
         <div class="hero">
             <h2>Transform Your Living Space</h2>
-            <p>Handcrafted candle stands, prestige book holders, and bespoke interior accents designed for luxury homes across Pakistan.</p>
+            <p>Handcrafted lamps, crystal accents, modern vases, candle stands, and prestige book holders designed for luxury homes across Pakistan.</p>
             <a href="https://wa.me/923004621124?text=Hi%20Ali%20Ameer%20Decor,%20I%20would%20like%20to%20inquire%20about%20your%20decor%20collection." class="btn-whatsapp" target="_blank">
                 <i class="fa-brands fa-whatsapp"></i> Order / Inquire via WhatsApp
             </a>
         </div>
 
-        <!-- Visual Photo Showcase -->
-        <h3 class="section-title">Decor Inspiration & Setups</h3>
+        <!-- Product Segments & Visual Showcase -->
+        <h3 class="section-title">Exclusive Decor Collections</h3>
         <div class="grid">
+            
+            <!-- Segment 1: Lamps -->
             <div class="card">
-                <img src="https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?auto=format&fit=crop&w=600&q=80" alt="Living Room Setup" class="card-img">
+                <img src="https://images.unsplash.com/photo-1507473885765-e6ed057f782c?auto=format&fit=crop&w=600&q=80" alt="Luxury Lamps" class="card-img">
                 <div class="card-body">
-                    <h3>Living Room Setups</h3>
-                    <p>Elevate TV lounges and drawing rooms with warm statement accessories.</p>
+                    <h3>Lamps & Ambient Lighting</h3>
+                    <p>Sophisticated table lamps and accent lighting designed to create a warm luxury glow.</p>
                 </div>
             </div>
+
+            <!-- Segment 2: Table Decor -->
             <div class="card">
-                <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=600&q=80" alt="Prestige Table Styling" class="card-img">
+                <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=600&q=80" alt="Table Decor" class="card-img">
                 <div class="card-body">
-                    <h3>Prestige Table Styling</h3>
-                    <p>Bespoke table accents and book holders crafted for elegant coffee tables.</p>
+                    <h3>Table Decor & Accents</h3>
+                    <p>Bespoke centerpieces and decorative tray styling for elegant coffee and dining tables.</p>
                 </div>
             </div>
+
+            <!-- Segment 3: Vases -->
             <div class="card">
-                <img src="https://images.unsplash.com/photo-1507652313519-d4e9174996dd?auto=format&fit=crop&w=600&q=80" alt="Candle Stands Ambiance" class="card-img">
+                <img src="https://images.unsplash.com/photo-1581783342308-f792dbdd27c5?auto=format&fit=crop&w=600&q=80" alt="Luxury Vases" class="card-img">
                 <div class="card-body">
-                    <h3>Candle Stand Ambiance</h3>
-                    <p>Creating luxury dining and lounge lighting setups with modern metalwork.</p>
+                    <h3>Luxury Vases & Vessels</h3>
+                    <p>Modern glass, ceramic, and metalwork vases crafted for floral and statement displays.</p>
                 </div>
             </div>
+
+            <!-- Segment 4: Crystal Decor -->
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1513519245088-0e12902e5a38?auto=format&fit=crop&w=600&q=80" alt="Crystal Decor" class="card-img">
+                <div class="card-body">
+                    <h3>Crystal & Glass Decor</h3>
+                    <p>High-clarity crystal accents, glass bowls, and light-reflecting room features.</p>
+                </div>
+            </div>
+
+            <!-- Segment 5: Candle Stands -->
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1507652313519-d4e9174996dd?auto=format&fit=crop&w=600&q=80" alt="Candle Stands" class="card-img">
+                <div class="card-body">
+                    <h3>Candle Stands</h3>
+                    <p>Ornate brass and metal candle holders designed for dining setups and lounge consoles.</p>
+                </div>
+            </div>
+
+            <!-- Segment 6: Prestige Book Holders -->
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?auto=format&fit=crop&w=600&q=80" alt="Prestige Book Holders" class="card-img">
+                <div class="card-body">
+                    <h3>Prestige Book Holders</h3>
+                    <p>Luxury book stands and holders crafted for coffee tables and study libraries.</p>
+                </div>
+            </div>
+
         </div>
 
         <!-- Social Media Hub -->
-        <h3 class="section-title">Follow Our Media Channels</h3>
+        <h3 class="section-title">Follow & Connect With Us</h3>
         <p style="text-align: center; font-size: 0.88rem; color: var(--text-muted); margin-bottom: 20px;">
-            Watch our short videos, aesthetic reels, and interior setup tutorials across all platforms:
+            Explore our video reels, leave a review, or browse interior inspiration across platforms:
         </p>
         <div class="social-grid">
+            <a href="https://g.page/r/CfjtZ_UrFOXUEAE/review" class="social-btn google" target="_blank">
+                <i class="fa-brands fa-google"></i> Google Review
+            </a>
             <a href="https://www.facebook.com/Ali.Art.Lahore" class="social-btn facebook" target="_blank">
                 <i class="fa-brands fa-facebook"></i> Facebook
             </a>
-            <a href="https://www.instagram.com" class="social-btn instagram" target="_blank">
+            <a href="https://www.instagram.com/ali.ameer.decor?igsh=MXJiZms1cTdua2d5Nw==" class="social-btn instagram" target="_blank">
                 <i class="fa-brands fa-instagram"></i> Instagram
             </a>
-            <a href="https://www.tiktok.com" class="social-btn tiktok" target="_blank">
+            <a href="https://www.tiktok.com/@ali.ameer.decor?_r=1&_t=ZS-96xmc9FVWDN" class="social-btn tiktok" target="_blank">
                 <i class="fa-brands fa-tiktok"></i> TikTok
             </a>
-            <a href="https://www.youtube.com" class="social-btn youtube" target="_blank">
+            <a href="https://youtube.com/@aliameerdecor?si=GzzbEIL1fYnRjWkW" class="social-btn youtube" target="_blank">
                 <i class="fa-brands fa-youtube"></i> YouTube
             </a>
-            <a href="https://www.pinterest.com" class="social-btn pinterest" target="_blank">
+            <a href="https://pin.it/5rfBOGxwE" class="social-btn pinterest" target="_blank">
                 <i class="fa-brands fa-pinterest"></i> Pinterest
             </a>
         </div>
@@ -330,7 +379,7 @@
     <footer>
         <p><strong>Ali Ameer Decor</strong> — Official Business Page</p>
         <p>📍 1st Floor Shah Jamal Centre, Shah Alam Market, Lahore</p>
-        <p>📞 Contact: 0300 4621124 | Nationwide Delivery Across Pakistan</p>
+        <p>📞 Order Inquiry: 0300 4621124 | Nationwide Delivery Across Pakistan</p>
         <p style="margin-top: 10px; font-size: 0.75rem;">© 2026 Ali Ameer Decor. All rights reserved.</p>
     </footer>
 
