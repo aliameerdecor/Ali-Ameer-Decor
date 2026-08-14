@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ali Ameer Decor | Luxury Home & Table Accessories</title>
+    
+    <!-- Open Graph for Social Media Sharing -->
+    <meta property="og:title" content="Ali Ameer Decor - Premium Home Accessories">
+    <meta property="og:description" content="Elevate your living space with handcrafted candle stands, prestige book holders, and luxury table decor across Pakistan.">
+    <meta property="og:type" content="website">
+
+    <!-- Fonts & Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        :root {
+            --primary: #111111;
+            --accent: #d4af37; /* Gold Accent */
+            --light-bg: #fdfbf7;
+            --card-bg: #ffffff;
+            --text-dark: #222222;
+            --text-muted: #666666;
+            --whatsapp-green: #25D366;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: var(--light-bg);
+            color: var(--text-dark);
+            line-height: 1.6;
+            padding-bottom: 90px;
+        }
+
+        /* Header with Background Image Overlay */
+        header {
+            position: relative;
+            background: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), 
+                        url('https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=1200&q=80') center/cover no-repeat;
+            color: #ffffff;
+            text-align: center;
+            padding: 55px 20px 45px;
+            border-bottom: 3px solid var(--accent);
+        }
+
+        header h1 {
+            font-family: 'Cinzel', serif;
+            font-size: 2.2rem;
+            letter-spacing: 3px;
+            color: var(--accent);
+            text-transform: uppercase;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+        }
+
+        header p.tagline {
+            font-size: 0.95rem;
+            letter-spacing: 2px;
+            color: #e0e0e0;
+            margin-top: 5px;
+            font-weight: 300;
+        }
+
+        header p.address {
+            font-size: 0.85rem;
+            color: var(--accent);
+            margin-top: 12px;
+            letter-spacing: 0.5px;
+        }
+
+        header p.address i {
+            margin-right: 5px;
+        }
+
+        .container {
+            max-width: 850px;
+            margin: 0 auto;
+            padding: 25px 20px;
+        }
+
+        /* Hero Banner */
+        .hero {
+            background: var(--card-bg);
+            border-radius: 12px;
+            padding: 30px 20px;
+            text-align: center;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+            margin-bottom: 30px;
+            border: 1px solid #eaeaea;
+        }
+
+        .hero h2 {
+            font-family: 'Cinzel', serif;
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+            color: var(--primary);
+        }
+
+        .hero p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            margin-bottom: 20px;
+        }
+
+        /* CTA Buttons */
+        .btn-whatsapp {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            background-color: var(--whatsapp-green);
+            color: #ffffff;
+            font-weight: 600;
+            padding: 14px 28px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-size: 1.05rem;
+            box-shadow: 0 4px 12px rgba(37, 211, 102, 0.3);
+            transition: transform 0.2s ease, background-color 0.2s ease;
+            width: 100%;
+            max-width: 380px;
+        }
+
+        .btn-whatsapp:hover {
+            background-color: #20ba5a;
+            transform: translateY(-2px);
+        }
+
+        /* Section Titles */
+        .section-title {
+            font-family: 'Cinzel', serif;
+            text-align: center;
+            font-size: 1.3rem;
+            margin: 35px 0 20px;
+            color: var(--primary);
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 50px;
+            height: 2px;
+            background: var(--accent);
+            margin: 8px auto 0;
+        }
+
+        /* Grid Layout */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 20px;
+        }
+
+        .card {
+            background: var(--card-bg);
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid #eaeaea;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.03);
+        }
+
+        .card-img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .card-body {
+            padding: 18px;
+            text-align: center;
+        }
+
+        .card-body h3 {
+            font-family: 'Cinzel', serif;
+            font-size: 1.1rem;
+            margin-bottom: 8px;
+            color: var(--primary);
+        }
+
+        .card-body p {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+
+        /* Social Media Hub */
+        .social-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 12px;
+            max-width: 550px;
+            margin: 0 auto;
+        }
+
+        @media (min-width: 600px) {
+            .social-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        .social-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            padding: 12px 15px;
+            border-radius: 25px;
+            text-decoration: none;
+            color: #ffffff;
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+
+        .facebook { background-color: #1877F2; }
+        .instagram { background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888); }
+        .tiktok { background-color: #000000; }
+        .youtube { background-color: #FF0000; }
+        .pinterest { background-color: #bd081c; }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 25px 20px;
+            font-size: 0.82rem;
+            color: var(--text-muted);
+            border-top: 1px solid #eaeaea;
+            margin-top: 40px;
+            background-color: #ffffff;
+        }
+
+        footer strong {
+            color: var(--primary);
+        }
+
+        /* Mobile Sticky Footer */
+        .sticky-footer {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background: #ffffff;
+            border-top: 1px solid #eaeaea;
+            padding: 12px 20px;
+            box-shadow: 0 -4px 15px rgba(0,0,0,0.08);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header / Brand Title with Background Image & Address -->
+    <header>
+        <h1>Ali Ameer Decor</h1>
+        <p class="tagline">LUXURY HOME & TABLE ACCESSORIES</p>
+        <p class="address"><i class="fa-solid fa-location-dot"></i> 1st Floor Shah Jamal Centre, Shah Alam Market, Lahore</p>
+    </header>
+
+    <div class="container">
+
+        <!-- Hero Section -->
+        <div class="hero">
+            <h2>Transform Your Living Space</h2>
+            <p>Handcrafted candle stands, prestige book holders, and bespoke interior accents designed for luxury homes across Pakistan.</p>
+            <a href="https://wa.me/923004621124?text=Hi%20Ali%20Ameer%20Decor,%20I%20would%20like%20to%20inquire%20about%20your%20decor%20collection." class="btn-whatsapp" target="_blank">
+                <i class="fa-brands fa-whatsapp"></i> Order / Inquire via WhatsApp
+            </a>
+        </div>
+
+        <!-- Visual Photo Showcase -->
+        <h3 class="section-title">Decor Inspiration & Setups</h3>
+        <div class="grid">
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?auto=format&fit=crop&w=600&q=80" alt="Living Room Setup" class="card-img">
+                <div class="card-body">
+                    <h3>Living Room Setups</h3>
+                    <p>Elevate TV lounges and drawing rooms with warm statement accessories.</p>
+                </div>
+            </div>
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=600&q=80" alt="Prestige Table Styling" class="card-img">
+                <div class="card-body">
+                    <h3>Prestige Table Styling</h3>
+                    <p>Bespoke table accents and book holders crafted for elegant coffee tables.</p>
+                </div>
+            </div>
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1507652313519-d4e9174996dd?auto=format&fit=crop&w=600&q=80" alt="Candle Stands Ambiance" class="card-img">
+                <div class="card-body">
+                    <h3>Candle Stand Ambiance</h3>
+                    <p>Creating luxury dining and lounge lighting setups with modern metalwork.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Social Media Hub -->
+        <h3 class="section-title">Follow Our Media Channels</h3>
+        <p style="text-align: center; font-size: 0.88rem; color: var(--text-muted); margin-bottom: 20px;">
+            Watch our short videos, aesthetic reels, and interior setup tutorials across all platforms:
+        </p>
+        <div class="social-grid">
+            <a href="https://www.facebook.com/Ali.Art.Lahore" class="social-btn facebook" target="_blank">
+                <i class="fa-brands fa-facebook"></i> Facebook
+            </a>
+            <a href="https://www.instagram.com" class="social-btn instagram" target="_blank">
+                <i class="fa-brands fa-instagram"></i> Instagram
+            </a>
+            <a href="https://www.tiktok.com" class="social-btn tiktok" target="_blank">
+                <i class="fa-brands fa-tiktok"></i> TikTok
+            </a>
+            <a href="https://www.youtube.com" class="social-btn youtube" target="_blank">
+                <i class="fa-brands fa-youtube"></i> YouTube
+            </a>
+            <a href="https://www.pinterest.com" class="social-btn pinterest" target="_blank">
+                <i class="fa-brands fa-pinterest"></i> Pinterest
+            </a>
+        </div>
+
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p><strong>Ali Ameer Decor</strong> — Official Business Page</p>
+        <p>📍 1st Floor Shah Jamal Centre, Shah Alam Market, Lahore</p>
+        <p>📞 Contact: 0300 4621124 | Nationwide Delivery Across Pakistan</p>
+        <p style="margin-top: 10px; font-size: 0.75rem;">© 2026 Ali Ameer Decor. All rights reserved.</p>
+    </footer>
+
+    <!-- Mobile Sticky CTA Bar -->
+    <div class="sticky-footer">
+        <a href="https://wa.me/923004621124?text=Hi%20Ali%20Ameer%20Decor,%20I%20want%20to%20view%20your%20latest%20catalog." class="btn-whatsapp" target="_blank">
+            <i class="fa-brands fa-whatsapp"></i> Chat on WhatsApp
+        </a>
+    </div>
+
+</body>
+</html>
