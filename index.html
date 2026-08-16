@@ -73,7 +73,7 @@
         .modal-card {
             background: #ffffff;
             border-radius: 16px;
-            max-width: 460px;
+            max-width: 480px;
             width: 100%;
             padding: 28px 22px;
             text-align: center;
@@ -117,19 +117,34 @@
             font-family: 'Cinzel', serif;
             color: var(--primary);
             font-size: 1.35rem;
-            margin-bottom: 6px;
+            margin-bottom: 8px;
         }
 
-        .modal-card p {
-            font-size: 0.85rem;
-            color: var(--text-muted);
-            margin-bottom: 18px;
+        .modal-card p.instructions {
+            font-size: 0.88rem;
+            color: var(--text-dark);
+            margin-bottom: 15px;
+            line-height: 1.5;
         }
 
         .modal-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
             gap: 10px;
+            margin-bottom: 18px;
+        }
+
+        .modal-cta-box {
+            margin-top: 15px;
+            padding-top: 15px;
+            border-top: 1px dashed rgba(212, 175, 55, 0.5);
+        }
+
+        .modal-cta-box p {
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--primary);
+            margin-bottom: 10px;
         }
 
         /* FLOATING SIDEBAR */
@@ -208,7 +223,7 @@
             padding: 25px 20px;
         }
 
-        /* Hero & Urgency Banner */
+        /* HERO WITH BRAND FACE INTEGRATION */
         .hero {
             background: var(--card-bg);
             backdrop-filter: blur(8px);
@@ -218,19 +233,39 @@
             box-shadow: 0 4px 20px rgba(0,0,0,0.06);
             margin-bottom: 25px;
             border: 1px solid rgba(212, 175, 55, 0.3);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .brand-face-container {
+            width: 110px;
+            height: 110px;
+            border-radius: 50%;
+            border: 3px solid var(--accent);
+            padding: 3px;
+            box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
+            overflow: hidden;
+            background: #ffffff;
+        }
+
+        .brand-face-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 50%;
         }
 
         .hero h2 {
             font-family: 'Cinzel', serif;
             font-size: 1.5rem;
-            margin-bottom: 10px;
             color: var(--primary);
         }
 
         .hero p {
             color: var(--text-muted);
             font-size: 0.95rem;
-            margin-bottom: 20px;
         }
 
         .urgency-banner {
@@ -265,6 +300,7 @@
             transition: transform 0.2s ease, box-shadow 0.2s ease;
             text-transform: uppercase;
             letter-spacing: 0.5px;
+            cursor: pointer;
         }
 
         .btn-gold:hover {
@@ -428,18 +464,19 @@
 </head>
 <body>
 
-    <!-- 1. INSTANT INCENTIVE POP-UP MODAL -->
+    <!-- 1. INCENTIVE POP-UP MODAL WITH STEP-BY-STEP INSTRUCTIONS -->
     <div class="modal-overlay" id="socialModal">
         <div class="modal-card">
             <button class="close-modal" id="closeModal">&times;</button>
             <span class="discount-badge">Exclusive Offer</span>
-            <h3>Get 10% Off Your Order!</h3>
-            <p>Follow us on Instagram or TikTok & share a screenshot via WhatsApp to claim your discount on Shah Alam Market arrivals.</p>
+            <h3>How to Unlock Your 10% Off</h3>
+            <p class="instructions">
+                1️⃣ Follow our official social media handles (Facebook, Instagram, or TikTok).<br>
+                2️⃣ Take a screenshot showing you follow us.<br>
+                3️⃣ Tap below to send us the screenshots on WhatsApp to claim your discount!
+            </p>
             
             <div class="modal-grid">
-                <a href="https://g.page/r/CfjtZ_UrFOXUEAE/review" class="social-btn google" target="_blank">
-                    <i class="fa-brands fa-google"></i> Google Review
-                </a>
                 <a href="https://www.facebook.com/Ali.Art.Lahore" class="social-btn facebook" target="_blank">
                     <i class="fa-brands fa-facebook"></i> Facebook
                 </a>
@@ -452,8 +489,12 @@
                 <a href="https://youtube.com/@aliameerdecor?si=GzzbEIL1fYnRjWkW" class="social-btn youtube" target="_blank">
                     <i class="fa-brands fa-youtube"></i> YouTube
                 </a>
-                <a href="https://pin.it/5rfBOGxwE" class="social-btn pinterest" target="_blank">
-                    <i class="fa-brands fa-pinterest"></i> Pinterest
+            </div>
+
+            <div class="modal-cta-box">
+                <p>Get 10% off by sending the screenshots to us:</p>
+                <a href="https://wa.me/923004621124?text=Hi%20Ali%20Ameer%20Decor,%20here%20are%20my%20social%20media%20follow%20screenshots%20to%20avail%20my%2010%25%20discount!" class="btn-gold" target="_blank">
+                    <i class="fa-brands fa-whatsapp"></i> Send Screenshots on WhatsApp
                 </a>
             </div>
         </div>
@@ -478,13 +519,18 @@
 
     <div class="container">
 
-        <!-- Hero Section -->
+        <!-- Hero Section with Brand Face Integration -->
         <div class="hero">
+            <div class="brand-face-container">
+                <img src="brand-face.jpg" alt="Ali Ameer Decor Face" class="brand-face-img">
+            </div>
             <h2>Transform Your Living Space</h2>
             <p>Handcrafted lamps, crystal accents, modern vases, candle stands, and prestige book holders designed for luxury homes across Pakistan.</p>
-            <a href="https://wa.me/923004621124?text=Hi%20Ali%20Ameer%20Decor,%20I%20followed%20your%20page%20and%20want%20to%20claim%20my%2010%25%20discount!" class="btn-gold" target="_blank">
-                <i class="fa-brands fa-whatsapp"></i> Unlock 10% Off Offer
-            </a>
+            
+            <!-- Top Golden Button: Opens Instructions Modal -->
+            <button class="btn-gold" id="openModalBtn">
+                <i class="fa-solid fa-lock-open"></i> Unlock the 10% Off Offer
+            </button>
         </div>
 
         <!-- Urgency / New Arrivals Banner -->
@@ -603,28 +649,36 @@
         <p style="margin-top: 10px; font-size: 0.75rem;">© 2026 Ali Ameer Decor. All rights reserved.</p>
     </footer>
 
-    <!-- Mobile Sticky CTA Bar -->
+    <!-- Bottom Sticky CTA Bar (Direct WhatsApp Link) -->
     <div class="sticky-footer">
-        <a href="https://wa.me/923004621124?text=Hi%20Ali%20Ameer%20Decor,%20I%20followed%20your%20page%20and%20want%20to%20claim%20my%2010%25%20discount!" class="btn-gold" target="_blank">
-            <i class="fa-brands fa-whatsapp"></i> Unlock 10% Off Offer
+        <a href="https://wa.me/923004621124?text=Hi%20Ali%20Ameer%20Decor,%20I%20want%20to%20avail%20the%2010%25%20offer%20now!" class="btn-gold" target="_blank">
+            <i class="fa-brands fa-whatsapp"></i> Avail 10% Offer Now
         </a>
     </div>
 
-    <!-- POP-UP SCRIPT -->
+    <!-- POP-UP & BUTTON SCRIPT -->
     <script>
         window.addEventListener('DOMContentLoaded', () => {
             const modal = document.getElementById('socialModal');
             const closeBtn = document.getElementById('closeModal');
+            const openModalBtn = document.getElementById('openModalBtn');
 
-            // Trigger Pop-up after 1 second
+            // Trigger Pop-up after 1.5 seconds automatically
             setTimeout(() => {
                 modal.classList.add('active');
-            }, 1000);
+            }, 1500);
 
+            // Open Modal when top button is clicked
+            openModalBtn.addEventListener('click', () => {
+                modal.classList.add('active');
+            });
+
+            // Close Modal on Close Icon Click
             closeBtn.addEventListener('click', () => {
                 modal.classList.remove('active');
             });
 
+            // Close Modal when tapping outside card
             modal.addEventListener('click', (e) => {
                 if (e.target === modal) {
                     modal.classList.remove('active');
