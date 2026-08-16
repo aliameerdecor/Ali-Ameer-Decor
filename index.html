@@ -1,0 +1,683 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ali Ameer Decor | Luxury Home & Table Accessories</title>
+    
+    <!-- Open Graph for Social Media Sharing -->
+    <meta property="og:title" content="Ali Ameer Decor - Premium Home Accessories">
+    <meta property="og:description" content="Elevate your living space with handcrafted candle stands, prestige book holders, luxury lamps, vases, and crystal decor across Pakistan.">
+    <meta property="og:type" content="website">
+
+    <!-- Fonts & Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        :root {
+            --primary: #111111;
+            --accent: #d4af37; /* Gold Accent */
+            --card-bg: rgba(255, 255, 255, 0.92);
+            --text-dark: #222222;
+            --text-muted: #555555;
+            --google-blue: #4285F4;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* ELEGANT DYNAMIC ANIMATED BACKGROUND */
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background: linear-gradient(-45deg, #fbf7ee, #f3e8d3, #ffffff, #eae0cb);
+            background-size: 400% 400%;
+            animation: gradientBG 15s ease infinite;
+            color: var(--text-dark);
+            line-height: 1.6;
+            padding-bottom: 90px;
+        }
+
+        @keyframes gradientBG {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        /* AUTOMATIC INCENTIVE POP-UP MODAL */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background: rgba(0, 0, 0, 0.8);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 9999;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.4s ease;
+            padding: 20px;
+        }
+
+        .modal-overlay.active {
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        .modal-card {
+            background: #ffffff;
+            border-radius: 16px;
+            max-width: 480px;
+            width: 100%;
+            padding: 28px 22px;
+            text-align: center;
+            position: relative;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            border: 2px solid var(--accent);
+            transform: translateY(20px);
+            transition: transform 0.4s ease;
+        }
+
+        .modal-overlay.active .modal-card {
+            transform: translateY(0);
+        }
+
+        .close-modal {
+            position: absolute;
+            top: 12px;
+            right: 16px;
+            font-size: 24px;
+            font-weight: bold;
+            color: #888;
+            cursor: pointer;
+            border: none;
+            background: none;
+        }
+
+        .discount-badge {
+            background: var(--accent);
+            color: #ffffff;
+            font-size: 0.75rem;
+            font-weight: 700;
+            padding: 4px 12px;
+            border-radius: 20px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            display: inline-block;
+            margin-bottom: 10px;
+        }
+
+        .modal-card h3 {
+            font-family: 'Cinzel', serif;
+            color: var(--primary);
+            font-size: 1.35rem;
+            margin-bottom: 8px;
+        }
+
+        .modal-card p.instructions {
+            font-size: 0.88rem;
+            color: var(--text-dark);
+            margin-bottom: 15px;
+            line-height: 1.5;
+        }
+
+        .modal-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
+            margin-bottom: 18px;
+        }
+
+        .modal-cta-box {
+            margin-top: 15px;
+            padding-top: 15px;
+            border-top: 1px dashed rgba(212, 175, 55, 0.5);
+        }
+
+        .modal-cta-box p {
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--primary);
+            margin-bottom: 10px;
+        }
+
+        /* FLOATING SIDEBAR */
+        .floating-sidebar {
+            position: fixed;
+            top: 40%;
+            right: 0;
+            transform: translateY(-50%);
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            z-index: 2000;
+        }
+
+        .sidebar-btn {
+            width: 44px;
+            height: 44px;
+            border-radius: 8px 0 0 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #ffffff;
+            font-size: 1.2rem;
+            text-decoration: none;
+            box-shadow: -2px 2px 8px rgba(0,0,0,0.2);
+            transition: transform 0.2s ease;
+        }
+
+        .sidebar-btn:hover {
+            transform: translateX(-5px);
+        }
+
+        /* Social Color Styling */
+        .google { background-color: var(--google-blue); }
+        .facebook { background-color: #1877F2; }
+        .instagram { background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888); }
+        .tiktok { background-color: #000000; }
+        .youtube { background-color: #FF0000; }
+        .pinterest { background-color: #bd081c; }
+
+        /* General Header Styling */
+        header {
+            position: relative;
+            background: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), 
+                        url('https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=1200&q=80') center/cover no-repeat;
+            color: #ffffff;
+            text-align: center;
+            padding: 55px 20px 45px;
+            border-bottom: 3px solid var(--accent);
+        }
+
+        header h1 {
+            font-family: 'Cinzel', serif;
+            font-size: 2.2rem;
+            letter-spacing: 3px;
+            color: var(--accent);
+            text-transform: uppercase;
+        }
+
+        header p.tagline {
+            font-size: 0.95rem;
+            letter-spacing: 2px;
+            color: #e0e0e0;
+            margin-top: 5px;
+        }
+
+        header p.address {
+            font-size: 0.85rem;
+            color: var(--accent);
+            margin-top: 12px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 25px 20px;
+        }
+
+        /* HERO WITH BRAND FACE INTEGRATION */
+        .hero {
+            background: var(--card-bg);
+            backdrop-filter: blur(8px);
+            border-radius: 12px;
+            padding: 30px 20px;
+            text-align: center;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+            margin-bottom: 25px;
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .brand-face-container {
+            width: 110px;
+            height: 110px;
+            border-radius: 50%;
+            border: 3px solid var(--accent);
+            padding: 3px;
+            box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
+            overflow: hidden;
+            background: #ffffff;
+        }
+
+        .brand-face-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 50%;
+        }
+
+        .hero h2 {
+            font-family: 'Cinzel', serif;
+            font-size: 1.5rem;
+            color: var(--primary);
+        }
+
+        .hero p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        .urgency-banner {
+            background: rgba(255, 248, 231, 0.9);
+            border: 1px dashed var(--accent);
+            border-radius: 10px;
+            padding: 12px;
+            margin-bottom: 30px;
+            text-align: center;
+            font-size: 0.88rem;
+            color: #8a6d3b;
+            backdrop-filter: blur(4px);
+        }
+
+        /* ATTRACTIVE GOLDEN BUTTON STYLING */
+        .btn-gold {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            background: linear-gradient(135deg, #bf953f 0%, #fcf6ba 25%, #b38728 50%, #fbf5b7 75%, #aa771c 100%);
+            color: #111111;
+            font-weight: 700;
+            padding: 14px 28px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-size: 1.05rem;
+            box-shadow: 0 4px 15px rgba(191, 149, 63, 0.4);
+            width: 100%;
+            max-width: 380px;
+            border: 1px solid #d4af37;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            cursor: pointer;
+        }
+
+        .btn-gold:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(191, 149, 63, 0.6);
+        }
+
+        .section-title {
+            font-family: 'Cinzel', serif;
+            text-align: center;
+            font-size: 1.3rem;
+            margin: 35px 0 20px;
+            color: var(--primary);
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 50px;
+            height: 2px;
+            background: var(--accent);
+            margin: 8px auto 0;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 20px;
+        }
+
+        .card {
+            background: var(--card-bg);
+            backdrop-filter: blur(8px);
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid rgba(0, 0, 0, 0.05);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.04);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+        }
+
+        .card-img {
+            width: 100%;
+            height: 260px;
+            object-fit: cover;
+        }
+
+        .card-body {
+            padding: 18px;
+            text-align: center;
+        }
+
+        .card-body h3 {
+            font-family: 'Cinzel', serif;
+            font-size: 1.1rem;
+            margin-bottom: 8px;
+            color: var(--primary);
+        }
+
+        .card-body p {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+
+        /* OPTIMIZED 9:16 VERTICAL REEL PLAYER CONTAINER */
+        .video-container {
+            background: #000000;
+            border-radius: 16px;
+            overflow: hidden;
+            margin: 0 auto 30px auto;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+            border: 1.5px solid rgba(212, 175, 55, 0.5);
+            width: 100%;
+            max-width: 320px;
+            aspect-ratio: 9 / 16;
+            position: relative;
+        }
+
+        .video-container video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            outline: none;
+        }
+
+        /* Social Proof Testimonials */
+        .reviews-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+
+        .review-card {
+            background: var(--card-bg);
+            backdrop-filter: blur(8px);
+            padding: 18px;
+            border-radius: 10px;
+            border: 1px solid rgba(212, 175, 55, 0.25);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+            font-size: 0.85rem;
+        }
+
+        .stars {
+            color: #f39c12;
+            margin-bottom: 6px;
+        }
+
+        .reviewer {
+            font-weight: 600;
+            color: var(--primary);
+            margin-top: 8px;
+            font-size: 0.8rem;
+        }
+
+        .social-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            padding: 12px 15px;
+            border-radius: 25px;
+            text-decoration: none;
+            color: #ffffff;
+            font-size: 0.82rem;
+            font-weight: 600;
+        }
+
+        footer {
+            text-align: center;
+            padding: 25px 20px;
+            font-size: 0.82rem;
+            color: var(--text-muted);
+            border-top: 1px solid rgba(0,0,0,0.08);
+            margin-top: 40px;
+            background-color: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(8px);
+        }
+
+        .sticky-footer {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(8px);
+            border-top: 1px solid #eaeaea;
+            padding: 12px 20px;
+            box-shadow: 0 -4px 15px rgba(0,0,0,0.08);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 1. INCENTIVE POP-UP MODAL WITH STEP-BY-STEP INSTRUCTIONS -->
+    <div class="modal-overlay" id="socialModal">
+        <div class="modal-card">
+            <button class="close-modal" id="closeModal">&times;</button>
+            <span class="discount-badge">Exclusive Offer</span>
+            <h3>How to Unlock Your 10% Off</h3>
+            <p class="instructions">
+                1️⃣ Follow our official social media handles (Facebook, Instagram, or TikTok).<br>
+                2️⃣ Take a screenshot showing you follow us.<br>
+                3️⃣ Tap below to send us the screenshots on WhatsApp to claim your discount!
+            </p>
+            
+            <div class="modal-grid">
+                <a href="https://www.facebook.com/Ali.Art.Lahore" class="social-btn facebook" target="_blank">
+                    <i class="fa-brands fa-facebook"></i> Facebook
+                </a>
+                <a href="https://www.instagram.com/ali.ameer.decor?igsh=MXJiZms1cTdua2d5Nw==" class="social-btn instagram" target="_blank">
+                    <i class="fa-brands fa-instagram"></i> Instagram
+                </a>
+                <a href="https://www.tiktok.com/@ali.ameer.decor?_r=1&_t=ZS-96xmc9FVWDN" class="social-btn tiktok" target="_blank">
+                    <i class="fa-brands fa-tiktok"></i> TikTok
+                </a>
+                <a href="https://youtube.com/@aliameerdecor?si=GzzbEIL1fYnRjWkW" class="social-btn youtube" target="_blank">
+                    <i class="fa-brands fa-youtube"></i> YouTube
+                </a>
+            </div>
+
+            <div class="modal-cta-box">
+                <p>Get 10% off by sending the screenshots to us:</p>
+                <a href="https://wa.me/923004621124?text=Hi%20Ali%20Ameer%20Decor,%20here%20are%20my%20social%20media%20follow%20screenshots%20to%20avail%20my%2010%25%20discount!" class="btn-gold" target="_blank">
+                    <i class="fa-brands fa-whatsapp"></i> Send Screenshots on WhatsApp
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- 2. STICKY FLOATING SIDEBAR -->
+    <div class="floating-sidebar">
+        <a href="https://g.page/r/CfjtZ_UrFOXUEAE/review" class="sidebar-btn google" title="Google Review" target="_blank"><i class="fa-brands fa-google"></i></a>
+        <a href="https://www.facebook.com/Ali.Art.Lahore" class="sidebar-btn facebook" title="Facebook" target="_blank"><i class="fa-brands fa-facebook-f"></i></a>
+        <a href="https://www.instagram.com/ali.ameer.decor?igsh=MXJiZms1cTdua2d5Nw==" class="sidebar-btn instagram" title="Instagram" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+        <a href="https://www.tiktok.com/@ali.ameer.decor?_r=1&_t=ZS-96xmc9FVWDN" class="sidebar-btn tiktok" title="TikTok" target="_blank"><i class="fa-brands fa-tiktok"></i></a>
+        <a href="https://youtube.com/@aliameerdecor?si=GzzbEIL1fYnRjWkW" class="sidebar-btn youtube" title="YouTube" target="_blank"><i class="fa-brands fa-youtube"></i></a>
+        <a href="https://pin.it/5rfBOGxwE" class="sidebar-btn pinterest" title="Pinterest" target="_blank"><i class="fa-brands fa-pinterest-p"></i></a>
+    </div>
+
+    <!-- Header / Brand Title -->
+    <header>
+        <h1>Ali Ameer Decor</h1>
+        <p class="tagline">LUXURY HOME & TABLE ACCESSORIES</p>
+        <p class="address"><i class="fa-solid fa-location-dot"></i> 1st Floor Shah Jamal Centre, Shah Alam Market, Lahore</p>
+    </header>
+
+    <div class="container">
+
+        <!-- Hero Section with Brand Face Integration -->
+        <div class="hero">
+            <div class="brand-face-container">
+                <img src="brand-face.jpg" alt="Ali Ameer Decor Face" class="brand-face-img">
+            </div>
+            <h2>Transform Your Living Space</h2>
+            <p>Handcrafted lamps, crystal accents, modern vases, candle stands, and prestige book holders designed for luxury homes across Pakistan.</p>
+            
+            <!-- Top Golden Button: Opens Instructions Modal -->
+            <button class="btn-gold" id="openModalBtn">
+                <i class="fa-solid fa-lock-open"></i> Unlock the 10% Off Offer
+            </button>
+        </div>
+
+        <!-- Urgency / New Arrivals Banner -->
+        <div class="urgency-banner">
+            <i class="fa-solid fa-bell"></i> <strong>New Weekly Arrivals!</strong> Follow our social channels to get early access to fresh inventory before stock sells out.
+        </div>
+
+        <!-- Video Showcase Section (9:16 Vertical Reel Player with Cache-Buster) -->
+        <h3 class="section-title">Video Reel Showcase</h3>
+        <div class="video-container">
+            <video controls playsinline preload="auto" poster="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=600&q=80">
+                <source src="reel.mp4?v=2" type="video/mp4">
+                Your browser does not support playing this video directly.
+            </video>
+        </div>
+
+        <!-- Product Segments -->
+        <h3 class="section-title">Exclusive Decor Collections</h3>
+        <div class="grid">
+            
+            <div class="card">
+                <img src="celestial-bloom.png?v=1" alt="The Celestial Bloom Amethyst Tree" class="card-img">
+                <div class="card-body">
+                    <h3>The "Celestial Bloom" Amethyst Tree</h3>
+                    <p>Handcrafted golden branch structure adorned with purple amethyst crystal blooms on a solid marble base.</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="vases-collection.png?v=1" alt="Bespoke Vases & Vessels" class="card-img">
+                <div class="card-body">
+                    <h3>Bespoke Vases & Vessels</h3>
+                    <p>Curated collection of textured gold, glass, and ceramic decorative vases for luxury floral arrangements.</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="dining-centerpiece.png?v=1" alt="Elegant Dining Centerpieces" class="card-img">
+                <div class="card-body">
+                    <h3>Elegant Dining Centerpieces</h3>
+                    <p>Classic 3-arm brass and crystal candelabra set designed for dining table luxury settings.</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="spiral-grace.png?v=1" alt="The Spiral Grace Candle Set" class="card-img">
+                <div class="card-body">
+                    <h3>The Spiral Grace Candle Set (Pair)</h3>
+                    <p>Twisted gold spiral base holders with warm glass hurricane shades, perfect for console and entryways.</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="prestige-book-holder.png?v=1" alt="Prestige Book Holder" class="card-img">
+                <div class="card-body">
+                    <h3>Prestige Book Holder</h3>
+                    <p>High-clarity diamond crystal bookends crafted to support study libraries and coffee table books.</p>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Social Proof Testimonials -->
+        <h3 class="section-title">What Our Google Reviewers Say</h3>
+        <div class="reviews-grid">
+            
+            <div class="review-card">
+                <div class="stars">
+                    <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                </div>
+                <p>"Good variety of table, center pieces & room decor items. Quality is commendable. 👍"</p>
+                <div class="reviewer">— Moon Ansari (Google Review)</div>
+            </div>
+
+            <div class="review-card">
+                <div class="stars">
+                    <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                </div>
+                <p>"Every variety of decoration pieces and other beautiful articles are available at very reasonable rates, moreover, the shopkeeper deals with his customers very ethically and politely."</p>
+                <div class="reviewer">— tariq javaid (Google Review)</div>
+            </div>
+
+            <div class="review-card">
+                <div class="stars">
+                    <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                </div>
+                <p>"I visited the place and the variety is just amazing ,unique and marvellous ...,"</p>
+                <div class="reviewer">— Farah Ali (Google Review)</div>
+            </div>
+
+            <div class="review-card">
+                <div class="stars">
+                    <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                </div>
+                <p>"Quality & Customized Products. Highly Recommended .."</p>
+                <div class="reviewer">— Saim Hassan (Google Review)</div>
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p><strong>Ali Ameer Decor</strong> — Official Business Page</p>
+        <p>📍 1st Floor Shah Jamal Centre, Shah Alam Market, Lahore</p>
+        <p>📞 Order Inquiry: 0300 4621124 | Nationwide Delivery Across Pakistan</p>
+        <p style="margin-top: 10px; font-size: 0.75rem;">© 2026 Ali Ameer Decor. All rights reserved.</p>
+    </footer>
+
+    <!-- Bottom Sticky CTA Bar (Direct WhatsApp Link) -->
+    <div class="sticky-footer">
+        <a href="https://wa.me/923004621124?text=Hi%20Ali%20Ameer%20Decor,%20I%20want%20to%20avail%20the%2010%25%20offer%20now!" class="btn-gold" target="_blank">
+            <i class="fa-brands fa-whatsapp"></i> Avail 10% Offer Now
+        </a>
+    </div>
+
+    <!-- POP-UP & BUTTON SCRIPT -->
+    <script>
+        window.addEventListener('DOMContentLoaded', () => {
+            const modal = document.getElementById('socialModal');
+            const closeBtn = document.getElementById('closeModal');
+            const openModalBtn = document.getElementById('openModalBtn');
+
+            // Trigger Pop-up after 1.5 seconds automatically
+            setTimeout(() => {
+                modal.classList.add('active');
+            }, 1500);
+
+            // Open Modal when top button is clicked
+            openModalBtn.addEventListener('click', () => {
+                modal.classList.add('active');
+            });
+
+            // Close Modal on Close Icon Click
+            closeBtn.addEventListener('click', () => {
+                modal.classList.remove('active');
+            });
+
+            // Close Modal when tapping outside card
+            modal.addEventListener('click', (e) => {
+                if (e.target === modal) {
+                    modal.classList.remove('active');
+                }
+            });
+        });
+    </script>
+
+</body>
+</html>
